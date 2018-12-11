@@ -1,4 +1,4 @@
-package tryout.algorithm.shortestPath.bellmannFord;
+package tryout.algorithm.shortestPath.bellmannFord001;
 
 import java.util.HashMap;
 import java.util.Scanner;

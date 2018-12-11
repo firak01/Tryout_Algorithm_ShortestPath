@@ -1,12 +1,12 @@
-package tryout.algorithm.shortestPath.dijkstra;
+package tryout.algorithm.shortestPath.dijkstra002;
 
 public class Edge {
 	 
 	private double weight;
-	private Vertex startVertex;
-	private Vertex targetVertex;
+	private HexVertex startVertex;
+	private HexVertex targetVertex;
 	
-	public Edge(double weight, Vertex startVertex, Vertex targetVertex) {
+	public Edge(double weight, HexVertex startVertex, HexVertex targetVertex) {
 		this.weight = weight;
 		this.startVertex = startVertex;
 		this.targetVertex = targetVertex;
@@ -20,19 +20,19 @@ public class Edge {
 		this.weight = weight;
 	}
  
-	public Vertex getStartVertex() {
+	public HexVertex getStartVertex() {
 		return startVertex;
 	}
  
-	public void setStartVertex(Vertex startVertex) {
+	public void setStartVertex(HexVertex startVertex) {
 		this.startVertex = startVertex;
 	}
  
-	public Vertex getTargetVertex() {
+	public HexVertex getTargetVertex() {
 		return targetVertex;
 	}
  
-	public void setTargetVertex(Vertex targetVertex) {
+	public void setTargetVertex(HexVertex targetVertex) {
 		this.targetVertex = targetVertex;
 	}
 }

@@ -1,33 +1,30 @@
-package tryout.algorithm.shortestPath.dijkstra;
+package tryout.algorithm.shortestPath.dijkstra002;
 
 import java.util.ArrayList;
 import java.util.List;
  
-public class Vertex implements Comparable<Vertex> {
+public class HexVertex implements Comparable<HexVertex> {
  
-	private String name;
+	private String sMapX;
+	private String sMapY;
+	
+	
 	private List<Edge> adjacenciesList;
 	private boolean visited;
-	private Vertex predecessor;
+	private HexVertex predecessor;
 	private double distance = Double.MAX_VALUE;
  
-	public Vertex(String name) {
-		this.name = name;
+	public HexVertex(String sMapX, String sMapY) {
+		this.sMapX = sMapX;
+		this.sMapY = sMapY;
+		
 		this.adjacenciesList = new ArrayList<>();
 	}
  
 	public void addNeighbour(Edge edge) {
 		this.adjacenciesList.add(edge);
 	}
- 
-	public String getName() {
-		return name;
-	}
- 
-	public void setName(String name) {
-		this.name = name;
-	}
- 
+  
 	public List<Edge> getAdjacenciesList() {
 		return adjacenciesList;
 	}
@@ -44,11 +41,11 @@ public class Vertex implements Comparable<Vertex> {
 		this.visited = visited;
 	}
  
-	public Vertex getPredecessor() {
+	public HexVertex getPredecessor() {
 		return predecessor;
 	}
  
-	public void setPredecessor(Vertex predecessor) {
+	public void setPredecessor(HexVertex predecessor) {
 		this.predecessor = predecessor;
 	}
  
@@ -62,11 +59,24 @@ public class Vertex implements Comparable<Vertex> {
  
 	@Override
 	public String toString() {
-		return this.name;
+		return this.getMapX() + "/" + this.getMapY();
 	}
  
 	@Override
-	public int compareTo(Vertex otherVertex) {
+	public int compareTo(HexVertex otherVertex) {
 		return Double.compare(this.distance, otherVertex.getDistance());
 	}
+	
+	
+	//### Interface: IMapNavigatable ####################################
+		public String getMapX(){
+			//int itemp = this.getHexCellObject().getMapX();			
+			//return new Integer(itemp).toString();
+			return this.sMapX;
+		}
+		public String getMapY(){
+//			int itemp =  this.getHexCellObject().getMapY();
+//			return new Integer(itemp).toString();
+			return this.sMapY;
+		}
 }

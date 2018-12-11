@@ -1,4 +1,4 @@
-package tryout.algorithm.shortestPath.dijkstra;
+package tryout.algorithm.shortestPath.dijkstra001;
 
 import java.util.PriorityQueue;
 
